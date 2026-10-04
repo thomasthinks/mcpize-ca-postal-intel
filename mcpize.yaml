@@ -1,0 +1,30 @@
+version: 1
+runtime: typescript
+entry: src/index.ts
+
+build:
+  install: npm ci
+  command: npm run build
+
+startCommand:
+  type: http
+  command: node dist/index.js
+
+configSchema:
+  source: code
+
+pricing:
+  protocol: x402
+  network: base-sepolia  # test first, flip to 'base' for production
+  recipient: "0x62c6da49028953919a4bd35d3092ac9277DA0a7D"
+  asset: usdc
+  tools:
+    - name: lookup_postal_code
+      price: "0.01"
+      description: "Look up a Canadian postal code and return FSA-level intelligence: community, province, approximate IANA timezone, centroid latitude/longitud…"
+    - name: validate_postal_code
+      price: "0.01"
+      description: "Validate the format of a Canadian postal code and check whether its FSA (forward sortation area) exists in the index. Returns the normalized…"
+    - name: fsa_to_region
+      price: "0.01"
+      description: "Resolve a 3-character Canadian forward sortation area (FSA) like 'K1A', 'M5V' or 'V6B' to its province and region name with the representati…"
