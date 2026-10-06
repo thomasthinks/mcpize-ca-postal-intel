@@ -21,10 +21,7 @@ pricing:
   tools:
     - name: lookup_postal_code
       price: "0.01"
-      description: "Look up a Canadian postal code and return FSA-level intelligence: community, province, approximate IANA timezone, centroid latitude/longitud…"
     - name: validate_postal_code
       price: "0.01"
-      description: "Validate the format of a Canadian postal code and check whether its FSA (forward sortation area) exists in the index. Returns the normalized…"
     - name: fsa_to_region
       price: "0.01"
-      description: "Resolve a 3-character Canadian forward sortation area (FSA) like 'K1A', 'M5V' or 'V6B' to its province and region name with the representati…"
